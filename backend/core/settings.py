@@ -54,6 +54,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "https://event-countdown-frontend-rky2991ue-aadhil4.vercel.app",
+    "https://event-countdown-frontend.vercel.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://event-countdown-frontend.vercel.app",
