@@ -9,10 +9,11 @@ const Login = ({ onLoginSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/token/', {
+      const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
+      const res = await axios.post(`${API_URL}/api/token/`, {
         username,
         password,
-      });
+     });
       localStorage.setItem('access_token', res.data.access);
       localStorage.setItem('refresh_token', res.data.refresh);
       onLoginSuccess();
