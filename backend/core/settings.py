@@ -28,6 +28,8 @@ DEBUG = False
 ALLOWED_HOSTS = [".vercel.app", "localhost", "127.0.0.1"]
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,6 +54,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+     r"^https://.*\.vercel\.app$",
+     r"^http://localhost:\d+$",
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     "https://event-countdown-frontend-rky2991ue-aadhil4.vercel.app",
