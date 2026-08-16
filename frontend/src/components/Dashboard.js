@@ -9,7 +9,7 @@ const Dashboard = ({ onLogout }) => {
 
   const fetchEvents = async () => {
     try {
-      const response = await API.get('events/');
+      const response = await API.get('/events/');
       setEvents(response.data);
     } catch (err) {
       console.error('Failed to fetch events:', err);
@@ -25,7 +25,7 @@ const Dashboard = ({ onLogout }) => {
     if (!title || !targetDate) return;
 
     try {
-      const response = await API.post('events/', {
+      const response = await API.post('/events/', {
         title,
         target_date: new Date(targetDate).toISOString(),
       });
@@ -39,7 +39,7 @@ const Dashboard = ({ onLogout }) => {
 
   const handleDeleteEvent = async (id) => {
     try {
-      await API.delete(`events/${id}/`);
+      await API.delete(`/events/${id}/`);
       setEvents(events.filter((evt) => evt.id !== id));
     } catch (err) {
       console.error('Failed to delete event:', err);

@@ -1,15 +1,7 @@
 import axios from 'axios';
 
-// const API = axios.create({
-//  baseURL: 'https://event-countdown-backend-seven.vercel.app/api/',
-// });
-
-// export default API;
-
-// import axios from 'axios';
-
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://event-countdown-backend-seven.vercel.app',
+  baseURL: process.env.REACT_APP_API_URL || 'https://event-countdown-backend-seven.vercel.app/api',
 });
 
 API.interceptors.request.use((config) => {
